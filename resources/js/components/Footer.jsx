@@ -9,7 +9,7 @@ const Footer = () => {
 
     ]
     return (
-        <footer className='bg-gray-50 flex flex-col items-start w-full mx-auto p-4 pb-2 mt-8 text-sm'>
+        <footer className='bg-white flex flex-col items-start w-full mx-auto p-5 pb-3 mt-10 text-sm'>
             <div className='flex justify-between flex-col items-start mt-6 md:flex-row md:justify-around md:w-full'>
                 <ul className='flex justify-center items-start gap-4 flex-col'>
                     <li className='font-semibold text-base'>Links </li>
