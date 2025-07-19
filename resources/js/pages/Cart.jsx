@@ -161,7 +161,7 @@ const Cart = () => {
                                 );
                             })}
                         </div>
-                        <div className="px-5 py-4 bg-white h-full w-1/2 md:mx-4 border-1 xs:w-full sm:w-1/2 xs:m-0 rounded-xl shadow-sm">
+                        <div className="px-6 py-5 bg-gray-50 h-full w-1/2 md:mx-4 border-1 xs:w-full sm:w-1/2 xs:m-0 rounded-xl shadow-md">
                             <div className="flex justify-between mb-2">
                                 <span>Subtotal:</span>
                                 <span>{`\u20B9 ${new Intl.NumberFormat('en-IN').format(subtotal)}`}</span>
