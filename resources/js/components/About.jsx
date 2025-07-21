@@ -4,7 +4,7 @@ const About = () => {
     return (
         <div className="w-5/6  mx-auto mt-8 ">
             <p className="text-3xl">About Us:</p>
-            <p className="text-gray-700 my-5 leading-7">
+            <p className="text-gray-700 my-6 leading-8">
                 Welcome to ShoeVista, your ultimate online destination for an extensive
                 range of high-quality footwear tailored to meet the needs of the entire
                 family. Located in the vibrant city of Gurgaon, Haryana, we are proud to
@@ -13,7 +13,7 @@ const About = () => {
                 designed to provide a seamless shopping experience with a diverse array
                 of options for men, women, and kids.
             </p>
-            <p className="text-gray-700 my-5 leading-7">
+            <p className="text-gray-700 my-6 leading-8">
                 At ShoeVista, we understand that comfort and style go hand in hand.
                 That's why our collection features everything from high-performance
                 running shoes to versatile walking sneakers. Whether you’re gearing up
@@ -24,7 +24,7 @@ const About = () => {
                 practicality. For the little ones, we have a variety of fun and
                 functional options that ensure they step out in style.
             </p>
-            <p className="text-gray-700 my-5 leading-7">
+            <p className="text-gray-700 my-6 leading-8">
                 Shopping with us means you have access to the latest trends and
                 innovations in footwear, all from the comfort of your home. Our
                 user-friendly online platform allows you to easily navigate through
