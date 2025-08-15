@@ -29,7 +29,7 @@ const GenInfo = () => {
     <div className="flex justify-center items-center my-20">
       <ul className="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 w-full max-w-screen-lg">
         {data.map((elem, id) => (
-          <li className="flex flex-col items-center bg-white p-5 rounded-3xl shadow-sm" key={id}>
+          <li className="flex flex-col items-center bg-white p-4" key={id}>
             <div className="flex-shrink-0 mb-2">
               <img
                 src={elem.src}
