@@ -9,7 +9,7 @@ const Home = () => {
       <Carousel />
       <GenInfo />
       <Brands />
-      <div className="md:w-full md:max-w-full xs:mx-2 sm:mx-auto grid gap-10 md:grid-cols-2 md:items-start md:px-6 mt-4">
+      <div className="md:w-full md:max-w-full xs:mx-2 sm:mx-auto grid gap-8 md:grid-cols-2 md:items-start md:px-3 mt-5">
         <div className="prose prose-2xl rounded-3xl border border-gray-300 bg-gradient-to-br from-white to-gray-50 p-8 shadow-sm hover:shadow-2xl transition-all hover:-translate-y-1">
           <ShopBy title="Best Sellers" filter="bestSellers" />
         </div>
