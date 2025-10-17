@@ -67,7 +67,7 @@ export const Brands = () => {
         {data.map((elem, id) => (
           <div
             key={id}
-            className="relative w-[340px] h-[340px] mx-2 mb-6 hover:text-white"
+            className="relative w-[340px] h-[340px] mx-2 mb-6 rounded-2xl overflow-hidden hover:text-white"
           >
             <div className="absolute w-full flex justify-center items-center top-4  ">
               <p className="logo font-semibold z-50 ">{elem.name}</p>
