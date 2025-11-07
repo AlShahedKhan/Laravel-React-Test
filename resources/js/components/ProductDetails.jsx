@@ -75,7 +75,7 @@ const ProductDetails = () => {
             {
                 // Show loading spinner while data is being fetched
                 loading ? <Loading /> : error ? <Error error={error} /> : (
-                    <div className='xs:w-[95vw] sm:w-[90vw] md:w-full md:max-w-screen-xl mx-auto my-10'>
+                    <div className='xs:w-[95vw] sm:w-[90vw] md:w-full md:max-w-screen-xl mx-auto my-12'>
                         <div className='flex xs:justify-start xs:items-start xs:p-4 md:p-8 md:mx-4 md:justify-between md:items-start border-2 xs:flex-col md:flex-row '>
                             <div className='md:w-2/3 xs:w-full relative md:border-r-1 md:pr-2 '>
                                 {/* Button to add/remove from wishlist */}
