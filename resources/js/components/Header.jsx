@@ -21,7 +21,7 @@ const Header = () => {
     const closeMenu = () => setIsOpen(false);
 
     return (
-        <nav className='sticky top-0 z-40 text-sm bg-white flex flex-col md:flex-row md:items-center md:justify-between p-5 py-4 gap-4 shadow-xl'>
+        <nav className='sticky top-0 z-40 text-sm bg-white flex flex-col md:flex-row md:items-center md:justify-between p-4 py-2 gap-2 shadow-sm'>
             <div className='flex justify-between items-center'>
                 {/* Logo */}
                 <Link
