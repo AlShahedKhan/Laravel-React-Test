@@ -64,7 +64,7 @@ const WishList = () => {
                         {products.map((product) => (
                             <div
                                 key={product._id}
-                                className="bg-white p-3 border-1 hover:border-black xs:w-full h-[300px] overflow-hidden relative flex flex-col rounded-3xl shadow-sm"
+                                className="bg-white p-1 border-1 hover:border-black xs:w-full h-[300px] overflow-hidden relative flex flex-col"
                             >
                                 <button
                                     onClick={() => toggleItemWishList(product._id)}
