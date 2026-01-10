@@ -13,7 +13,7 @@ const Home = () => {
         <div className="prose prose-2xl rounded-3xl border border-gray-400 bg-gradient-to-br from-white to-gray-50 p-7 shadow-md hover:shadow-lg transition-all hover:-translate-y-1">
           <ShopBy title="Best Sellers" filter="bestSellers" />
         </div>
-        <div className="prose prose-2xl rounded-3xl border border-gray-400 bg-gradient-to-br from-white to-gray-50 p-6 shadow-md hover:shadow-lg transition-all hover:-translate-y-1">
+        <div className="prose prose-2xl rounded-3xl border border-gray-400 bg-gradient-to-br from-white to-gray-50 p-7 shadow-md hover:shadow-lg transition-all hover:-translate-y-1">
           <ShopBy title="Top Rated" filter="topRated" />
         </div>
       </div>
