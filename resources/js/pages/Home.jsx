@@ -5,7 +5,7 @@ import GenInfo, { Brands } from "../components/GenInfo";
 
 const Home = () => {
   return (
-    <div className="max-w-screen-xl xs:w-[95vw] xs:max-w-[95vw] md:w-full mx-auto py-8">
+    <div className="max-w-screen-xl xs:w-[95vw] xs:max-w-[95vw] md:w-full mx-auto py-8 bg-white">
       <Carousel />
       <GenInfo />
       <Brands />
