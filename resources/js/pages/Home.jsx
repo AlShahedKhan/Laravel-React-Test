@@ -10,7 +10,7 @@ const Home = () => {
       <GenInfo />
       <Brands />
       <div className="md:w-full md:max-w-full xs:mx-2 sm:mx-auto grid gap-8 md:grid-cols-2 md:items-start md:px-2 mt-4">
-        <div className="prose prose-2xl rounded-2xl border border-gray-200 bg-gradient-to-br from-white to-gray-50 p-5 shadow-sm hover:shadow-md transition-shadow">
+        <div className="prose prose-2xl rounded-2xl border border-gray-200 bg-gradient-to-br from-white to-gray-50 p-5 shadow-sm hover:shadow-md transition-shadow hover:-translate-y-0.5">
           <ShopBy title="Best Sellers" filter="bestSellers" />
         </div>
         <div className="prose prose-2xl rounded-2xl border border-gray-200 bg-gradient-to-br from-white to-gray-50 p-5 shadow-sm hover:shadow-md transition-shadow">
