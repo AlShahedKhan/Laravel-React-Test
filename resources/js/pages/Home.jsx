@@ -5,15 +5,15 @@ import GenInfo, { Brands } from "../components/GenInfo";
 
 const Home = () => {
   return (
-    <div className="max-w-screen-xl xs:w-[95vw] xs:max-w-[95vw] md:w-full mx-auto py-16 bg-white shadow-xl">
+    <div className="max-w-screen-xl xs:w-[95vw] xs:max-w-[95vw] md:w-full mx-auto py-8 bg-white shadow-2xl">
       <Carousel />
       <GenInfo />
       <Brands />
-      <div className="md:w-full md:max-w-full xs:mx-2 sm:mx-auto grid gap-12 md:grid-cols-2 md:items-start md:px-4 mt-6">
-        <div className="prose prose-2xl rounded-2xl border border-gray-400 bg-gradient-to-br from-white to-gray-50 p-12 shadow-xl hover:shadow-xl transition-all hover:-translate-y-1">
+      <div className="md:w-full md:max-w-full xs:mx-2 sm:mx-auto grid gap-14 md:grid-cols-2 md:items-start md:px-6 mt-8">
+        <div className="prose prose-2xl rounded-3xl border border-gray-500 bg-gradient-to-br from-white to-gray-50 p-6 shadow-2xl hover:shadow-2xl transition-all hover:-translate-y-1">
           <ShopBy title="Best Sellers" filter="bestSellers" />
         </div>
-        <div className="prose prose-2xl rounded-2xl border border-gray-400 bg-gradient-to-br from-white to-gray-50 p-12 shadow-sm hover:shadow-2xl transition-all hover:-translate-y-1">
+        <div className="prose prose-2xl rounded-3xl border border-gray-500 bg-gradient-to-br from-white to-gray-50 p-6 shadow-md hover:shadow-md transition-all hover:-translate-y-1">
           <ShopBy title="Top Rated" filter="topRated" />
         </div>
       </div>
