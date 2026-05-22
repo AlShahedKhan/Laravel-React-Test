@@ -10,10 +10,10 @@ const Home = () => {
       <GenInfo />
       <Brands />
       <div className="md:w-full md:max-w-full xs:mx-2 sm:mx-auto grid gap-6 md:grid-cols-2 md:items-start md:px-2">
-        <div className="prose prose-2xl rounded-2xl border border-gray-200 bg-gradient-to-br from-white to-gray-50 p-4 shadow-sm">
+        <div className="prose prose-2xl rounded-2xl border border-gray-200 bg-gradient-to-br from-white to-gray-50 p-4 shadow-sm hover:shadow-md transition-shadow">
           <ShopBy title="Best Sellers" filter="bestSellers" />
         </div>
-        <div className="prose prose-2xl rounded-2xl border border-gray-200 bg-gradient-to-br from-white to-gray-50 p-4 shadow-sm">
+        <div className="prose prose-2xl rounded-2xl border border-gray-200 bg-gradient-to-br from-white to-gray-50 p-4 shadow-sm hover:shadow-md transition-shadow">
           <ShopBy title="Top Rated" filter="topRated" />
         </div>
       </div>
