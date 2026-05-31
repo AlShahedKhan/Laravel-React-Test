@@ -5,15 +5,15 @@ import GenInfo, { Brands } from "../components/GenInfo";
 
 const Home = () => {
   return (
-    <div className="max-w-screen-xl xs:w-[95vw] xs:max-w-[95vw] md:w-full mx-auto ">
+    <div className="max-w-screen-xl xs:w-[95vw] xs:max-w-[95vw] md:w-full mx-auto py-4">
       <Carousel />
       <GenInfo />
       <Brands />
-      <div className="md:w-full md:max-w-full xs:mx-2  sm:mx-auto ">
-        <div className="prose prose-2xl">
+      <div className="md:w-full md:max-w-full xs:mx-2 sm:mx-auto grid gap-6 md:grid-cols-2 md:items-start">
+        <div className="prose prose-2xl rounded-2xl border border-gray-200 bg-white p-4 shadow-sm">
           <ShopBy title="Best Sellers" filter="bestSellers" />
         </div>
-        <div className="prose prose-2xl">
+        <div className="prose prose-2xl rounded-2xl border border-gray-200 bg-white p-4 shadow-sm">
           <ShopBy title="Top Rated" filter="topRated" />
         </div>
       </div>
