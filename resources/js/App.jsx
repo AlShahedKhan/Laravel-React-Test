@@ -5,6 +5,7 @@ import Footer from './components/Footer'
 const App = () => {
   return (
     <>
+      {/* Main application shell */}
       <Header />
       <Outlet />
       <Footer />
