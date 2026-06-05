@@ -43,6 +43,7 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
+    {/* Shared providers wrap the full app tree */}
     <WishListProvider>
       <CartProvider>
         <RouterProvider router={router} future={{ v7_startTransition: true }} />
