@@ -16,14 +16,9 @@ Homestead.json
 Homestead.yaml
 auth.json
 storage/*.key
-storage/framework/cache/data/
-storage/framework/sessions/
-storage/framework/testing/
-storage/framework/views/
 storage/logs/*.log
 
 # PHP
-composer.lock
 composer.phar
 *.log
 *.sql
@@ -69,13 +64,22 @@ desktop.ini
 *.log
 storage/logs/*.log
 
-# Session files
+# Laravel runtime files
 storage/framework/sessions/*
+!storage/framework/sessions/.gitignore
 
 # Cache files
 storage/framework/cache/*
+!storage/framework/cache/.gitignore
+!storage/framework/cache/data/
+storage/framework/cache/data/*
+!storage/framework/cache/data/.gitignore
+storage/framework/testing/*
+!storage/framework/testing/.gitignore
 storage/framework/views/*
+!storage/framework/views/.gitignore
 bootstrap/cache/*.php
+!bootstrap/cache/.gitignore
 
 # Environment files
 .env.*
