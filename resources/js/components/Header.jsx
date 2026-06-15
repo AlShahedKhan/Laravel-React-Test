@@ -8,9 +8,17 @@ const Header = () => {
     const [isOpen, setIsOpen] = useState(false);
     const { list } = useWishList();
     const { cartList } = useCart();
+    const navLinks = [
+        { path: '/', label: 'Home' },
+        { path: '/shoes/men', label: 'Men' },
+        { path: '/shoes/women', label: 'Women' },
+        { path: '/shoes/kids', label: 'Kids' },
+        { path: '/about-us', label: 'About Us' },
+    ];
 
     // Toggle the menu
     const toggleMenu = () => setIsOpen(prev => !prev);
+    const closeMenu = () => setIsOpen(false);
 
     return (
         <nav className='sticky top-0 z-40 text-sm bg-white flex flex-col md:flex-row md:items-center md:justify-between p-4 py-2 gap-2 shadow-sm'>
@@ -19,7 +27,7 @@ const Header = () => {
                 <Link
                     to="/"
                     className="logo text-xl font-bold"
-                    onClick={toggleMenu}
+                    onClick={closeMenu}
                 >
                     ShoeVista
                 </Link>
@@ -48,20 +56,17 @@ const Header = () => {
             <div className={`flex flex-col md:flex-row md:items-center ${isOpen ? 'block' : 'hidden md:flex'}`}>
                 {/* Links */}
                 <ul className='flex flex-col md:flex-row md:gap-4 md:pr-6'>
-                    {['/', '/shoes/men', '/shoes/women', '/shoes/kids'].map((path, index) => {
-                        const labels = ['Home', 'Men', 'Women', 'Kids'];
-                        return (
-                            <li key={path} className='hover:bg-slate-100 transition-all duration-300 delay-100 p-2 rounded'>
-                                <NavLink
-                                    to={path}
-                                    onClick={toggleMenu}
-                                    className={({ isActive }) => `${isActive ? 'font-extrabold' : ''}`}
-                                >
-                                    {labels[index]}
-                                </NavLink>
-                            </li>
-                        );
-                    })}
+                    {navLinks.map(({ path, label }) => (
+                        <li key={path} className='hover:bg-slate-100 transition-all duration-300 delay-100 p-2 rounded'>
+                            <NavLink
+                                to={path}
+                                onClick={closeMenu}
+                                className={({ isActive }) => `${isActive ? 'font-extrabold' : ''}`}
+                            >
+                                {label}
+                            </NavLink>
+                        </li>
+                    ))}
                 </ul>
 
                 {/* Right Side Bar */}
@@ -70,7 +75,7 @@ const Header = () => {
                     <div className='flex items-center gap-4'>
                         <NavLink
                             to="/wishlist"
-                            onClick={toggleMenu}
+                            onClick={closeMenu}
                         >
                             <div className='relative'>
                                 <span className='w-4 text-center rounded-xl absolute bottom-4 left-4 text-xs bg-gray-900 text-white'>
@@ -81,7 +86,7 @@ const Header = () => {
                         </NavLink>
                         <NavLink
                             to="/cart"
-                            onClick={toggleMenu}
+                            onClick={closeMenu}
                         >
                             <div className='relative'>
                                 <span className='w-4 text-center rounded-xl absolute bottom-4 left-4 text-xs bg-gray-900 text-white'>
