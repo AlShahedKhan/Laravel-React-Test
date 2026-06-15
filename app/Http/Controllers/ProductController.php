@@ -7,9 +7,22 @@ use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
+    private function formatProduct(Product $product): array
+    {
+        return [
+            ...$product->toArray(),
+            '_id' => $product->id,
+        ];
+    }
+
+    private function productCollection($products)
+    {
+        return response()->json($products->map(fn (Product $product) => $this->formatProduct($product))->values());
+    }
+
     public function getProducts()
     {
-        return response()->json(Product::all());
+        return $this->productCollection(Product::all());
     }
     
     public function getProduct($id)
@@ -18,7 +31,7 @@ class ProductController extends Controller
         if (!$product) {
             return response()->json(['message' => 'Product not found'], 404);
         }
-        return response()->json($product);
+        return response()->json($this->formatProduct($product));
     }
     
     public function addProduct(Request $request)
@@ -37,13 +50,13 @@ class ProductController extends Controller
         ]);
         
         $product = Product::create($validated);
-        return response()->json($product, 201);
+        return response()->json($this->formatProduct($product), 201);
     }
     
     public function getByCategory($category)
     {
         $products = Product::where('category', $category)->get();
-        return response()->json($products);
+        return $this->productCollection($products);
     }
     
     public function getTopRated()
@@ -51,7 +64,7 @@ class ProductController extends Controller
         $products = Product::where('rating', '>=', 4)
             ->orderBy('rating', 'desc')
             ->get();
-        return response()->json($products);
+        return $this->productCollection($products);
     }
     
     public function getBestSellers()
@@ -59,7 +72,7 @@ class ProductController extends Controller
         $products = Product::orderByRaw('CAST(orders AS UNSIGNED) DESC')
             ->take(10)
             ->get();
-        return response()->json($products);
+        return $this->productCollection($products);
     }
     
     public function searchProducts(Request $request)
@@ -68,7 +81,7 @@ class ProductController extends Controller
         $products = Product::where('title', 'like', "%{$query}%")
             ->orWhere('brand', 'like', "%{$query}%")
             ->get();
-        return response()->json($products);
+        return $this->productCollection($products);
     }
     
     public function filterProducts(Request $request)
@@ -88,7 +101,7 @@ class ProductController extends Controller
             $query->where('rating', '>=', $request->rating);
         }
         
-        return response()->json($query->get());
+        return $this->productCollection($query->get());
     }
     
     public function listOfProducts($list)
@@ -98,8 +111,18 @@ class ProductController extends Controller
                 $products = Product::orderBy('created_at', 'desc')->take(20)->get();
                 break;
             default:
-                $products = Product::take(20)->get();
+                $ids = collect(explode(',', $list))
+                    ->map(fn ($id) => (int) trim($id))
+                    ->filter()
+                    ->values();
+
+                $products = $ids->isEmpty()
+                    ? Product::take(20)->get()
+                    : Product::whereIn('id', $ids)->get()->sortBy(
+                        fn (Product $product) => $ids->search($product->id)
+                    )->values();
         }
-        return response()->json($products);
+
+        return $this->productCollection($products);
     }
 }

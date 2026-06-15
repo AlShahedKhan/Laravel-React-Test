@@ -51,7 +51,7 @@ const FilterMenu = forwardRef(({ setData, isVisible, setVisibility }, ref) => {
         try {
             // Construct query string from filterBy state
             const queryString = new URLSearchParams(filterBy).toString();
-            const res = await axios.get(`${import.meta.env.VITE_BASE_URL}/api/products/filterBy?${queryString}`);
+            const res = await axios.get(`/api/products/filterBy?${queryString}`);
             setData(res.data); // Update data with filtered results
         } catch (error) {
             setData([]); // Clear data on error

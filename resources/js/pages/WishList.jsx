@@ -24,13 +24,13 @@ const WishList = () => {
 
         const fetchData = async () => {
             try {
-                const res = await axios.get(`${import.meta.env.VITE_BASE_URL}/api/products/${list}`);
+                const res = await axios.get(`/api/products/${list}`);
                 if (isMounted) {
                     if (res.data.message) {
                         setProducts([]);
                         setError(null);
                     } else {
-                        setProducts(res.data);
+                        setProducts(Array.isArray(res.data) ? res.data : []);
                         setError(null);
                     }
                     setLoading(false);

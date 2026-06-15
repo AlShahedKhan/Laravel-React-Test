@@ -12,9 +12,9 @@ const Similar = ({ gender, id }) => {
         let isMounted = true;
         const fetchData = async () => {
             try {
-                const res = await axios.get(`${import.meta.env.VITE_BASE_URL}/api/category/${gender}`);
+                const res = await axios.get(`/api/category/${gender}`);
                 if (isMounted) {
-                    const sliced = res.data.slice(0, 15);
+                    const sliced = (Array.isArray(res.data) ? res.data : []).slice(0, 15);
                     const filtered = sliced.filter(elem => elem._id != id)
                     setProducts(filtered);
                     setLoading(false);

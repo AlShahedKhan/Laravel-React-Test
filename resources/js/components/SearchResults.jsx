@@ -15,13 +15,13 @@ const SearchResults = () => {
         let isMounted = true;
         const fetchData = async () => {
             try {
-                const res = await axios.get(`${import.meta.env.VITE_BASE_URL}/api/products/search?q=${encodeURIComponent(search)}`);
+                const res = await axios.get(`/api/products/search?q=${encodeURIComponent(search)}`);
                 if (isMounted) {
+                    const data = Array.isArray(res.data) ? res.data : [];
                     if (search.includes('women')) {
-                        const data = res.data.filter(elem => elem.category === 'women');
-                        setProducts(data);
+                        setProducts(data.filter(elem => elem.category === 'women'));
                     } else {
-                        setProducts(res.data.slice(0, 50));
+                        setProducts(data.slice(0, 50));
                     }
                     setLoading(false);
                 }

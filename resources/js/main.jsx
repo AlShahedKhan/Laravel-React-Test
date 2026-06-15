@@ -2,6 +2,8 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "./App";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import "./index.css";
 import Home from "./pages/Home";
 import Men from "./pages/Men";
@@ -43,7 +45,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <WishListProvider>
       <CartProvider>
-        <RouterProvider router={router} />
+        <RouterProvider router={router} future={{ v7_startTransition: true }} />
         <ToastContainer />
       </CartProvider>
     </WishListProvider>

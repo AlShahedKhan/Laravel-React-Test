@@ -26,13 +26,13 @@ const Cart = () => {
 
         const fetchData = async () => {
             try {
-                const res = await axios.get(`${import.meta.env.VITE_BASE_URL}/api/products/${cartList.join(',')}`);
+                const res = await axios.get(`/api/products/${cartList.join(',')}`);
                 if (isMounted) {
                     if (res.data.message) {
                         setProducts([]);
                         setError(null);
                     } else {
-                        setProducts(res.data);
+                        setProducts(Array.isArray(res.data) ? res.data : []);
                         setError(null);
                     }
                     setLoading(false);
@@ -187,5 +187,4 @@ const Cart = () => {
 };
 
 export default Cart;
-
 

@@ -1,4 +1,6 @@
 /** @type {import('tailwindcss').Config} */
+import typography from "@tailwindcss/typography";
+
 export default {
   content: [
     "./resources/**/*.blade.php",
@@ -9,5 +11,5 @@ export default {
   theme: {
     extend: {},
   },
-  plugins: [require("tailwind-typography-style")],
+  plugins: [typography],
 }
