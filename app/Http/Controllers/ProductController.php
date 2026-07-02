@@ -103,6 +103,8 @@ class ProductController extends Controller
         
         return $this->productCollection($query->get());
     }
+
+    // 
     
     public function listOfProducts($list)
     {
